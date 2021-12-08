@@ -69,16 +69,19 @@ $user_query = mysqli_query($conn,"select * from teacher where teacher_id='$sessi
 
                             </div>
                         </div>
-
-                        <h4>Schedule</h4>
-                         <h5><input type="checkbox" name="Mon" id="Mon">Monday<br><input type="text"></h5>
-                        <h5><input type="checkbox" name="tue" id="tue">Tuesday<br><input type="text"></h5>
-                         <h5><input type="checkbox" name="wed" id="wed">Wednesday<br><input type="text"></h5>
-                        <h5><input type="checkbox" name="thurs" id="thurs">Thursday<br><input type="text"></h5>
-                        <h5><input type="checkbox" name="fri" id="fri">Friday<br><input type="text"></h5>
-                        <h5><input type="checkbox" name="sat" id="sat">Saturday<br><input type="text"></h5>
-                        <h5><input type="checkbox" name="sun" id="sun">Sunday<br><input type="text"></h5>
-
+    <div class="control-group">
+                            <label class="control-label" for="inputEmail"></label>
+                            <div class="controls">
+                       <h4> Schedule</h4>
+                <input type="checkbox" name="Mon" id="Mon">Monday<br><input type="text"><br>
+                <input type="checkbox" name="tue" id="tue">Tuesday<br><input type="text"><br>
+                         <input type="checkbox" name="wed" id="wed">Wednesday<br><input type="text"><br>
+                        <input type="checkbox" name="thurs" id="thurs">Thursday<br><input type="text"><br>
+                        <input type="checkbox" name="fri" id="fri">Friday<br><input type="text"><br>
+                    <input type="checkbox" name="sat" id="sat">Saturday<br><input type="text"><br>
+                        <input type="checkbox" name="sun" id="sun">Sunday<br><input type="text"><br>
+ </div>
+                        </div>
 
 
 

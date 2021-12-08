@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 04, 2021 at 11:24 AM
+-- Generation Time: Dec 08, 2021 at 01:28 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.31
 
@@ -32,18 +32,20 @@ CREATE TABLE `class` (
   `course_id` varchar(100) NOT NULL,
   `subject_id` varchar(100) NOT NULL,
   `teacher_id` varchar(100) NOT NULL,
-  `student_id` int(11) NOT NULL
+  `student_id` int(11) NOT NULL,
+  `sched` varchar(50) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `class`
 --
 
-INSERT INTO `class` (`class_id`, `course_id`, `subject_id`, `teacher_id`, `student_id`) VALUES
-(126, 'BSIT-3A', '', '14', 0),
-(125, 'BSIT-1A', '', '1', 0),
-(124, 'BSIT-3A', '', '1', 0),
-(122, 'BSIT-3A', '', '1', 0);
+INSERT INTO `class` (`class_id`, `course_id`, `subject_id`, `teacher_id`, `student_id`, `sched`) VALUES
+(130, 'BSIT-2A', 'thesis10-1', '1', 0, ''),
+(131, 'BSIT-1A', 'system info', '1', 0, ''),
+(137, 'BSIT-3A', 'daadda', '14', 0, ''),
+(138, 'BSIT-3A', 'system info', '1', 0, ''),
+(136, 'BSIT-2A', 'thesis10-1', '15', 0, '');
 
 -- --------------------------------------------------------
 
@@ -104,16 +106,6 @@ CREATE TABLE `files` (
   `fname` varchar(100) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `files`
---
-
-INSERT INTO `files` (`file_id`, `floc`, `fdatein`, `fdesc`, `teacher_id`, `class_id`, `fname`) VALUES
-(32, 'uploads/4281_File_andreas-gucklhorn-mawU2PoJWfU-unsplash.jpg', '2021-11-25 10:25:23', 'yawa ka mark', 1, 19, 'psd'),
-(31, 'uploads/7643_File_mi-min-pkpqoBp11Jc-unsplash.jpg', '2021-11-24 21:07:20', 'gora na bis', 1, 16, 'pictureko'),
-(33, 'uploads/8463_File_Fbc learning system document.docx', '2021-11-25 10:30:46', 'papasa sa thesis', 1, 19, 'docs'),
-(34, 'uploads/3718_File_Fbc learning system document.docx', '2021-11-25 10:37:23', 'adad', 1, 19, 'ppt');
-
 -- --------------------------------------------------------
 
 --
@@ -148,7 +140,7 @@ INSERT INTO `student` (`student_id`, `firstname`, `lastname`, `middle_name`, `cy
 (26, 'mc', 'cotejo', 'a', '', '', 0, 'cotejo', 'cotejo', 'uploads/122572763_3935226409824105_6881222230547751699_n.jpg'),
 (27, 'reynald', 'arzaga', 'A.', '', '', 0, 'arzaga', 'arzaga', 'uploads/84526102_2447763662142531_8473701902113046528_n.jpg'),
 (28, 'rico', 'villaruel', 'a', '', '', 0, 'rico', 'rico', 'uploads/256696405_1635140743498774_7128841240905569893_n.jpg'),
-(29, 'a', 'a', 'a', '', '', 0, 'a', 'a', 'uploads/first.jpg');
+(30, 'vicente', 'badua', 'S.', '', '', 0, 'baduav20@gmail.com', '1801010008', 'uploads/73193374_2164896143805699_3557342753522188288_n.jpg');
 
 -- --------------------------------------------------------
 
@@ -192,7 +184,8 @@ CREATE TABLE `sws` (
 --
 
 INSERT INTO `sws` (`sws_id`, `student_id`, `teacher_id`, `cys`, `subject_id`, `class_id`) VALUES
-(88, 20, 1, '', '', 1);
+(122, 20, 14, 'BSIT-3A', 'thesis10-1', 14),
+(123, 20, 1, 'BSIT-1A', 'thesis10-1', 1);
 
 -- --------------------------------------------------------
 
@@ -236,7 +229,8 @@ CREATE TABLE `teacher` (
 
 INSERT INTO `teacher` (`teacher_id`, `username`, `password`, `firstname`, `lastname`, `middlename`, `department`, `student_id`, `location`) VALUES
 (1, 'tech', 'tech', 'tech', 'er', 'smith', 'College of Industrial Technology', 0, 'uploads/images (3).jpg'),
-(14, 'a', 'a', 'a', 'a', 'a', 'ECT department', 0, 'uploads/www.YTS.MX.jpg');
+(14, 'a', 'a', 'a', 'a', 'a', 'ECT department', 0, 'uploads/www.YTS.MX.jpg'),
+(15, 'a', 'a', 'ds', 'b', 'b', 'ECT department', 0, 'uploads/first.jpg');
 
 -- --------------------------------------------------------
 
@@ -385,7 +379,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `class`
 --
 ALTER TABLE `class`
-  MODIFY `class_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=127;
+  MODIFY `class_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=140;
 
 --
 -- AUTO_INCREMENT for table `course`
@@ -403,13 +397,13 @@ ALTER TABLE `department`
 -- AUTO_INCREMENT for table `files`
 --
 ALTER TABLE `files`
-  MODIFY `file_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `file_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `student`
 --
 ALTER TABLE `student`
-  MODIFY `student_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `student_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `subject`
@@ -421,7 +415,7 @@ ALTER TABLE `subject`
 -- AUTO_INCREMENT for table `sws`
 --
 ALTER TABLE `sws`
-  MODIFY `sws_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
+  MODIFY `sws_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=124;
 
 --
 -- AUTO_INCREMENT for table `sy`
@@ -433,7 +427,7 @@ ALTER TABLE `sy`
 -- AUTO_INCREMENT for table `teacher`
 --
 ALTER TABLE `teacher`
-  MODIFY `teacher_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `teacher_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `teacher_student`
