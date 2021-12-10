@@ -19,7 +19,7 @@
                     ?>
 
 
-                    <a href="teacher_add_class_admin.php?teacher_id=<?php echo $teacher_id  ?>" class="btn btn-success"><i class="icon-plus-sign icon-large"></i>&nbsp;Add Class</a>
+                    <a href="teacher_add_class_admin.php?teacher_id=<?php echo $teacher_id  ?>&id=<?php echo $_GET['id'] ?>" class="btn btn-success"><i class="icon-plus-sign icon-large"></i>&nbsp;Add Class</a>
                 <br></br>
                     <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
                         <div class="alert alert-info">

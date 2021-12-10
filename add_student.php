@@ -13,6 +13,10 @@ $subect_id = $course_row['subject_id'];
 $query_class = mysqli_query($conn,"select * from class where teacher_id='$session_id'") or die(mysqli_error());
 $row_class = mysqli_fetch_array($query_class);
 $id_class = $row_class['class_id'];
+
+    
+
+
 ?>
 <body>
 
